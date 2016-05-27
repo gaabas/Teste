@@ -1,0 +1,104 @@
+from sys import exit
+
+
+
+def dark_room(bag):
+	print bag
+	print '-------------------'
+	print '   DARK ROOM       '
+	print '-------------------'
+	print ''
+	print 'Welcome! You are in a dark room with three doors.'
+	print "Which you choose ?" 
+	print "[1] Blue"
+	print ""
+	print "[2] Red"
+	print ""
+	print "[3] Green"
+
+	chosen_door = raw_input("> ")
+
+	if chosen_door == '1' and bag == '0':
+		door1()
+	elif chosen_door == '1' and bag == '1':
+		print "You alredy choose this door."
+		dark_room('1')
+	elif chosen_door == '2' and bag == '0':
+		door2('0')
+	elif chosen_door == '2' and bag == '1':
+		door2('1')
+	elif chosen_door == '3':
+		door3()
+	else: 
+		print "You're stupid!!"
+		exit(0)
+
+def door1():
+	print "Welcome to water's room. Here there a large water demon."
+	print "What are you going to do ?"
+	print "[1]Fight"
+	print "[2]Talk"
+	print "[3]Run"
+	door1_n = raw_input("> ")
+	
+	if door1_n == '1':
+		print "Oh Wait! The demon flooded the room and made you die sufocated."
+		exit(0)
+	elif door1_n == '2': 
+		print "He's very friendly and was just feeling alone. Congratulations, he left you alive"
+		print "and you receive the 'Splendorous Staff Water'."
+		raw_input("Press ENTER: ")		
+		dark_room('1')
+	elif door1_n == '3':
+		print "Oh Wait! The demon flooded the room and made you die sufocated."
+		exit(0)
+		
+def door2(bag2):
+	print "Welcome to fire's room. Here there a exorbitant dragon made entirely of fire."
+	print "He seems furious. What are you going to do ?"
+	
+	if bag2 == '0':
+		print "[1]Fight"
+		print "[2]Talk"
+		print "[3]Run"
+		
+		door2_n = raw_input("> ")
+		
+	elif bag2 == '1':
+		print "[1]Fight"
+		print "[2]Talk"
+		print "[3]Run"
+		print "[4]Try to use 'Splendorous Staff Water'."
+	
+		door2_n = raw_input("> ")
+	
+	if door2_n == '1' or door2_n == '2' or door2_n == '3':
+		print "Oh Wait! The dragon spat a giant fireball in middle of your head."
+		print "You die like a piece of flaming shit."
+		exit(0)
+	
+	elif door2_n == '4':
+		print "The staff has a great power, he made huge waves in the room and turned off the dragon"
+		print "as a candle extinguished..."
+		print "Look! There's a door behind him, will you enter ?"
+		print "[1] Yes"
+		print "[2] No"
+	
+		door2_n2 = raw_input("> ")
+		
+		
+dark_room('0')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
